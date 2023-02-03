@@ -75,6 +75,31 @@ body {
     width: 500px;
 }
 
+.shakeEffect{
+    animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+
+@keyframes shake {
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0) rotate(-1deg);
+    }
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0) rotate(2deg);
+    }
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-3px, 0, 0) rotate(-3deg);
+    }
+    40%,
+    60% {
+      transform: translate3d(3px, 0, 0) rotate(3deg);
+    }
+  }
+
 .container-right {
     width: 30%;
     flex-direction: column;
@@ -144,10 +169,12 @@ body {
 }
 
 .selected {
-    /* border: 3px solid rgba(51, 51, 51, 0.764); */
     scale: 1.1;
-    transition: scale 0.3s;
+    filter: drop-shadow(0 0 5px black);
+    transition: all 0.4s;
 }
+
+
 
 .color {
     width: 40px;
@@ -168,10 +195,10 @@ body {
     letter-spacing: 1px;
     color: white;
     text-decoration: none;
-    box-shadow: 0 0 30px rgba(51, 51, 51, 0.373);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.514);
     transition: background-color 0.5s;
 }
 
 .cart-btn:hover {
-    background-color: #1f2029c8;
+    background-color: #1f2029c8 !important;
 }
