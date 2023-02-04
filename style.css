@@ -275,7 +275,12 @@ sub {
     }
 
     .container-right{
-        width: 100%;
+        width: 60%;
+    }
+
+    .details-area{
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .container-right>*{
@@ -303,6 +308,10 @@ sub {
 
 @media screen and (max-width : 478px) {
     
+
+    .container-right{
+        width: 305px;
+    }
 
     .title-heading{
         font-size: 1.7rem;
