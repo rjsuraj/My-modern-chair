@@ -15,6 +15,35 @@ const cartButton = document.getElementById("cartButton");
 const chair = document.getElementById("chair");
 
 
+const detail = document.getElementById("detail");
+const detailArea = document.getElementById("details-area");
+const desc = document.getElementById("desc");
+const descArea = document.getElementById("description-area");
+
+// woking on description and details section
+
+detail.addEventListener('click',()=>{
+    descArea.classList.remove("text-selected")
+    detailArea.classList.add("text-selected")
+    
+    desc.classList.remove("visible")
+    detail.classList.add("visible")
+
+    detail.style.setProperty("--op2","1")
+    desc.style.setProperty("--op1","0.8")
+
+})
+
+desc.addEventListener('click',()=>{
+    detailArea.classList.remove("text-selected")
+    descArea.classList.add("text-selected")
+
+    detail.classList.remove("visible")
+    desc.classList.add("visible")
+
+    desc.style.setProperty("--op1","1")
+    detail.style.setProperty("--op2","0.8")
+})
 
 function startanimation(element) {
 

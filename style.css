@@ -13,12 +13,14 @@ body {
     color: white;
 }
 
-:root{
-    --gradient-opacity1 : 1;
-    --gradient-opacity2 : 0;
-    --gradient-color : linear-gradient(196deg, #f1a9a9, #e66767);
-    --gradient-color1 : linear-gradient(196deg, #f1a9a9, #e66767);
-    --gradient-color2 : linear-gradient(196deg, #f1a9a9, #e66767);
+:root {
+    --gradient-opacity1: 1;
+    --gradient-opacity2: 0;
+    --gradient-color: linear-gradient(196deg, #f1a9a9, #e66767);
+    --gradient-color1: linear-gradient(196deg, #f1a9a9, #e66767);
+    --gradient-color2: linear-gradient(196deg, #f1a9a9, #e66767);
+    --op1 : 0.8;
+    --op2 : 0.8;
 }
 
 /* container */
@@ -75,36 +77,41 @@ body {
     width: 500px;
 }
 
-.shakeEffect{
+.shakeEffect {
     animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
 
 @keyframes shake {
+
     10%,
     90% {
-      transform: translate3d(-1px, 0, 0) rotate(-1deg);
+        transform: translate3d(-1px, 0, 0) rotate(-1deg);
     }
+
     20%,
     80% {
-      transform: translate3d(2px, 0, 0) rotate(2deg);
+        transform: translate3d(2px, 0, 0) rotate(2deg);
     }
+
     30%,
     50%,
     70% {
-      transform: translate3d(-3px, 0, 0) rotate(-3deg);
+        transform: translate3d(-3px, 0, 0) rotate(-3deg);
     }
+
     40%,
     60% {
-      transform: translate3d(3px, 0, 0) rotate(3deg);
+        transform: translate3d(3px, 0, 0) rotate(3deg);
     }
-  }
+}
 
 .container-right {
     width: 30%;
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
+    position: relative;
 }
 
 .title {
@@ -143,6 +150,11 @@ body {
     font-weight: 600;
     font-size: 1.2rem;
     cursor: pointer;
+    opacity: 0.6;
+}
+
+.desc:hover{
+    opacity: var(--op1);
 }
 
 .details {
@@ -154,7 +166,52 @@ body {
 }
 
 .details:hover {
-    opacity: 0.7;
+    opacity: var(--op2);
+}
+
+.visible{
+    opacity: 1;
+}
+
+
+
+
+.details-area {
+    gap: 20px;
+    position: absolute;
+    top: 188px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+
+
+.size {
+    font-size: 1.9rem;
+    font-weight: 400;
+}
+
+sub {
+    font-size: 1rem;
+}
+
+.unit {
+    font-weight: 400;
+}
+
+.down {
+    padding-bottom: 30px;
+    transition: all 250ms linear;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+.text-selected {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .color-text {
